@@ -119,6 +119,7 @@ resource "aws_db_instance" "database" {
   engine_version         = "5.7"
   instance_class         = "db.t3.micro" # switched db.t2.micro to db.t3.micro
   identifier             = "mydb" # REPLACED name WITH identifier
+  skip_final_snapshot    = true
   username               = "admin"
   password               = "password123"
   vpc_security_group_ids = [aws_security_group.db_sg.id]  # Link to db_sg security group
